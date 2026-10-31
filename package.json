@@ -1,0 +1,17 @@
+{
+  "name": "front-end-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Front End Store con persistencia de pedidos en MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "sync:local": "node scripts/sync-pedidos.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0"
+  }
+}

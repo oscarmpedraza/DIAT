@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Front End Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="nosotros">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <div class="franja">Envío gratis en todos los pedidos</div>
+
+    <header class="cabecera">
+        <div class="cabecera__interior">
+            <a class="cabecera__marca" href="index.html">
+                <img class="cabecera__logo" src="img/logo.png" alt="Front End Store, ir al inicio">
+            </a>
+
+            <form class="buscador" action="index.html" role="search">
+                <label class="visualmente-oculto" for="q">Buscar productos</label>
+                <input id="q" name="q" type="search" placeholder="Buscar por tecnología" autocomplete="off">
+                <button type="submit" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+                </button>
+            </form>
+
+            <a class="boton-carrito" href="carrito.html" data-abrir-carrito aria-label="Carrito, 0 productos">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.6 12.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+                <span>Carrito</span>
+                <span class="boton-carrito__cuenta" data-cuenta data-vacio="true" aria-hidden="true">0</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="navegacion" aria-label="Principal">
+        <div class="navegacion__interior">
+            <a class="navegacion__enlace" href="index.html">Tienda</a>
+            <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html" aria-current="page">Nosotros</a>
+        </div>
+    </nav>
+
+    <main class="contenedor" id="contenido">
+        <h1>Nosotros</h1>
+
+        <div class="nosotros">
+            <div class="nosotros__contenido">
+                <p>Nam nec metus a risus auctor congue nec non felis. Donec eu diam facilisis, semper nisl sed, ultricies ligula. Duis convallis tortor eu mi interdum feugiat. Pellentesque diam dolor, dignissim sit amet metus vitae, viverra dapibus odio. Mauris lobortis odio nisi, ut pulvinar nisl accumsan non. Aliquam vitae diam elementum ipsum gravida mattis. Nulla facilisi. Etiam eu urna at arcu dignissim tempor. Vestibulum ultrices ex ante, quis gravida metus vehicula nec. Donec interdum ultricies diam, congue dictum libero auctor quis.</p>
+
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis, ac semper nulla pellentesque sed. Morbi condimentum mauris orci. In blandit et dolor vel consequat. Cras urna odio, euismod sit amet mauris a, varius dignissim neque.</p>
+            </div>
+            <img class="nosotros__imagen" src="img/nosotros.jpg" alt="Equipo de Front End Store" loading="lazy">
+        </div>
+    </main>
+
+    <section class="contenedor comprar" aria-labelledby="titulo-comprar">
+        <h2 class="comprar__titulo" id="titulo-comprar">¿Por qué comprar con nosotros?</h2>
+
+        <div class="bloques">
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_1.png" alt="" loading="lazy">
+                <h3 class="bloque__titulo">El mejor precio</h3>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
+            </div>
+
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_2.png" alt="" loading="lazy">
+                <h3 class="bloque__titulo">Para devs</h3>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
+            </div>
+
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_3.png" alt="" loading="lazy">
+                <h3 class="bloque__titulo">Envío gratis</h3>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
+            </div>
+
+            <div class="bloque">
+                <img class="bloque__imagen" src="img/icono_4.png" alt="" loading="lazy">
+                <h3 class="bloque__titulo">La mejor calidad</h3>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__interior">
+            <p class="footer__texto">Front End Store - Todos los derechos reservados 2026.</p>
+            <nav class="footer__enlaces" aria-label="Pie de página">
+                <a href="index.html">Tienda</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>

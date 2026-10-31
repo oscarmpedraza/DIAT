@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu carrito | Front End Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="carrito">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <div class="franja">Envío gratis en todos los pedidos</div>
+
+    <header class="cabecera">
+        <div class="cabecera__interior">
+            <a class="cabecera__marca" href="index.html">
+                <img class="cabecera__logo" src="img/logo.png" alt="Front End Store, ir al inicio">
+            </a>
+
+            <form class="buscador" action="index.html" role="search">
+                <label class="visualmente-oculto" for="q">Buscar productos</label>
+                <input id="q" name="q" type="search" placeholder="Buscar por tecnología" autocomplete="off">
+                <button type="submit" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+                </button>
+            </form>
+
+            <a class="boton-carrito" href="carrito.html" data-abrir-carrito aria-label="Carrito, 0 productos">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.6 12.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+                <span>Carrito</span>
+                <span class="boton-carrito__cuenta" data-cuenta data-vacio="true" aria-hidden="true">0</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="navegacion" aria-label="Principal">
+        <div class="navegacion__interior">
+            <a class="navegacion__enlace" href="index.html">Tienda</a>
+            <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        </div>
+    </nav>
+
+    <main class="contenedor" id="contenido">
+        <h1 id="titulo-carrito">Tu carrito</h1>
+
+        <div class="caja" id="carrito-vacio" hidden>
+            <h2>Tu carrito está vacío</h2>
+            <p>Agrega camisetas desde la tienda y aparecerán aquí.</p>
+            <a class="boton boton--principal" href="index.html">Ver productos</a>
+        </div>
+
+        <div class="pedido" id="carrito-lleno" hidden>
+            <section class="pedido__lineas caja" aria-label="Productos en el carrito">
+                <ul id="lineas"></ul>
+            </section>
+
+            <aside class="resumen caja" aria-labelledby="titulo-resumen">
+                <h2 id="titulo-resumen">Resumen del pedido</h2>
+                <dl>
+                    <div class="resumen__fila">
+                        <dt id="resumen-unidades">Productos</dt>
+                        <dd id="resumen-subtotal"></dd>
+                    </div>
+                    <div class="resumen__fila">
+                        <dt>Envío</dt>
+                        <dd>Gratis</dd>
+                    </div>
+                    <div class="resumen__fila resumen__fila--total">
+                        <dt>Total</dt>
+                        <dd id="resumen-total"></dd>
+                    </div>
+                </dl>
+                <a class="boton boton--principal boton--ancho" href="#envio">Continuar con el pedido</a>
+                <p class="resumen__nota"><a href="index.html">Seguir comprando</a></p>
+            </aside>
+
+            <section class="pedido__envio caja" id="envio" aria-labelledby="titulo-envio">
+                <h2 id="titulo-envio">Datos de envío</h2>
+                <form class="formulario" id="form-envio" novalidate>
+                    <div class="campos">
+                        <div class="campos__completo">
+                            <label for="nombre">Nombre completo</label>
+                            <input class="formulario__campo" id="nombre" name="nombre" type="text" autocomplete="name" required>
+                        </div>
+                        <div>
+                            <label for="correo">Correo electrónico</label>
+                            <input class="formulario__campo" id="correo" name="correo" type="email" autocomplete="email" required>
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono</label>
+                            <input class="formulario__campo" id="telefono" name="telefono" type="tel" autocomplete="tel" required>
+                        </div>
+                        <div class="campos__completo">
+                            <label for="direccion">Dirección</label>
+                            <input class="formulario__campo" id="direccion" name="direccion" type="text" autocomplete="street-address" required>
+                        </div>
+                        <div>
+                            <label for="ciudad">Ciudad</label>
+                            <input class="formulario__campo" id="ciudad" name="ciudad" type="text" autocomplete="address-level2" required>
+                        </div>
+                    </div>
+                    <div class="formulario__acciones">
+                        <button class="boton boton--principal" type="submit">Confirmar pedido</button>
+                    </div>
+                    <p class="formulario__error" id="error-pedido" role="alert" hidden></p>
+                </form>
+            </section>
+        </div>
+
+        <div id="confirmacion" hidden></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__interior">
+            <p class="footer__texto">Front End Store - Todos los derechos reservados 2026.</p>
+            <nav class="footer__enlaces" aria-label="Pie de página">
+                <a href="index.html">Tienda</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pagina-carrito.js"></script>
+</body>
+</html>

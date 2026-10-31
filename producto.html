@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto | Front End Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="producto">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <div class="franja">Envío gratis en todos los pedidos</div>
+
+    <header class="cabecera">
+        <div class="cabecera__interior">
+            <a class="cabecera__marca" href="index.html">
+                <img class="cabecera__logo" src="img/logo.png" alt="Front End Store, ir al inicio">
+            </a>
+
+            <form class="buscador" action="index.html" role="search">
+                <label class="visualmente-oculto" for="q">Buscar productos</label>
+                <input id="q" name="q" type="search" placeholder="Buscar por tecnología" autocomplete="off">
+                <button type="submit" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+                </button>
+            </form>
+
+            <a class="boton-carrito" href="carrito.html" data-abrir-carrito aria-label="Carrito, 0 productos">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.6 12.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+                <span>Carrito</span>
+                <span class="boton-carrito__cuenta" data-cuenta data-vacio="true" aria-hidden="true">0</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="navegacion" aria-label="Principal">
+        <div class="navegacion__interior">
+            <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+            <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        </div>
+    </nav>
+
+    <main class="contenedor" id="contenido">
+        <div id="contenido-producto">
+            <nav class="migas" aria-label="Ruta de navegación">
+                <a href="index.html">Tienda</a><span aria-hidden="true">/</span><span id="p-migas" aria-current="page"></span>
+            </nav>
+
+            <div class="camisa">
+                <img class="camisa__imagen" id="p-imagen" src="img/3.jpg" alt="Imagen del producto">
+
+                <div class="camisa__contenido">
+                    <h1 id="p-nombre">Camiseta</h1>
+                    <p class="camisa__precio" id="p-precio"></p>
+                    <p class="camisa__texto" id="p-descripcion"></p>
+
+                    <form class="formulario" id="form-producto" novalidate>
+                        <div class="formulario__fila">
+                            <label for="talla">Talla</label>
+                            <select class="formulario__campo" id="talla" name="talla" required aria-describedby="error-talla">
+                                <option value="" disabled selected>Elige una talla</option>
+                                <option>Chica</option>
+                                <option>Mediana</option>
+                                <option>Grande</option>
+                            </select>
+                            <p class="formulario__error" id="error-talla" role="alert" hidden>Elige una talla para continuar.</p>
+                        </div>
+
+                        <div class="formulario__fila">
+                            <label for="cantidad">Cantidad</label>
+                            <div class="cantidad">
+                                <button type="button" data-paso="-1" aria-label="Menos">&minus;</button>
+                                <input id="cantidad" name="cantidad" type="number" value="1" min="1" max="99" inputmode="numeric">
+                                <button type="button" data-paso="1" aria-label="Más">+</button>
+                            </div>
+                        </div>
+
+                        <div class="formulario__acciones">
+                            <button class="boton boton--principal" type="submit">Agregar al carrito</button>
+                            <button class="boton boton--oscuro" type="button" id="comprar-ahora">Comprar ahora</button>
+                        </div>
+                    </form>
+
+                    <ul class="garantias">
+                        <li>Envío gratis en todos los pedidos</li>
+                        <li>Camisetas para desarrolladores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="relacionados" aria-labelledby="titulo-relacionados">
+                <h2 id="titulo-relacionados">También te puede interesar</h2>
+                <div class="grid" id="relacionados"></div>
+            </section>
+        </div>
+
+        <div class="vacio" id="producto-no-existe" hidden>
+            <h1>No encontramos este producto</h1>
+            <p>Es posible que el enlace esté desactualizado.</p>
+            <a class="boton boton--principal" href="index.html">Ver todos los productos</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__interior">
+            <p class="footer__texto">Front End Store - Todos los derechos reservados 2026.</p>
+            <nav class="footer__enlaces" aria-label="Pie de página">
+                <a href="index.html">Tienda</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/producto.js"></script>
+</body>
+</html>
